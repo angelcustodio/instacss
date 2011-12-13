@@ -5,12 +5,13 @@ define([
 ], function($, _, Backbone) {
   
   var SectionScrape = Backbone.Model.extend({
+    
     idAttribute: '_id',
+    
     defaults: {
       'title'                : '',
-      'fullTitle'            : '',
       'htmlEscapedTitle'     : '', // Set in initialize
-      'lowerCaseTitle'       : '', // Set in initialize
+      'url'                  : '',
       'sectionNames'         : [],
       'sectionHTMLs'         : [],
       
@@ -27,10 +28,6 @@ define([
       }, {
         silent: true
       });
-    },
-    
-    url: function() {
-      return this.urlRoot + '/' + this.get('name');
     },
   
   });
